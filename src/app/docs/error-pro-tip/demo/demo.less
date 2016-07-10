@@ -1,0 +1,26 @@
+input[type="text"], input[type="passward"], .mock-input {
+	display: inline-block;
+	height: 30px;
+	min-width: 180px;
+	line-height: 28px;
+	margin: 0 0 10px;
+	padding-left: 8px;
+	border: 1px solid #333;
+	border-radius: 3px;
+	vertical-align: top;
+
+	&.mock-input {
+		background-color: #f1f1f1;
+	}
+}
+input[type="text"].error-input, input[type="passward"].error-input, .mock-input.error-span {
+	margin-left: -1px;
+	border: 2px solid #ff4848;
+}
+.error-msg {
+	padding-left: 10px;
+	color: #ff4848;
+}
+.hide-me {
+	display: none !important;
+}

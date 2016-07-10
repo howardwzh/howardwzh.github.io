@@ -1,0 +1,56 @@
+<h5 class="bl">Html</h5>
+<a class="copy-btn" href="javascript:;" clip-copy="getTextToCopy('.demo-html')">Copy</a>
+<pre class="demo-html" make-pre-code='html'>
+<textarea>
+<style>
+♦...♦
+<input type="text" 
+  ng-model="formData.userNameA" 
+  error-pro-tip="globalObj" 
+  error-pro-preset="presetObj.name"
+  error-pro-only="nameOnlyObj" 
+  error-pro-index="0"
+>
+
+<input type="text" 
+  ng-model="formData.userNameB" 
+  error-pro-tip="globalObj" 
+  error-pro-preset="presetObj.name"
+  error-pro-only="nameOnlyObj" 
+  error-pro-index="1"
+>
+
+<input type="text" 
+  ng-model="formData.userNameC" 
+  error-pro-tip="globalObj" 
+  error-pro-preset="presetObj.name"
+  error-pro-only="nameOnlyObj" 
+  error-pro-index="2"
+>
+♦...♦
+</style>
+</textarea>
+</pre>
+
+<h5 class="gy">Javascript</h5>
+<a class="copy-btn" href="javascript:;" clip-copy="getTextToCopy('.demo-js')">Copy</a>
+<pre class="demo-js" make-pre-code='js'>
+<textarea>
+♦...♦
+$scope.presetObj = {
+	name: {
+		id: 'name',
+		ruleTip: {
+			rule: [/^.{1,}$/, /^[a-zA-Z]+$/],
+			tip: ['Required!', 'Must be letters!']
+		}
+	}
+};
+$scope.nameOnlyObj = {
+	onlyArr: [],
+	onlyErr: [],
+	onlyTip: 'Repeat with the above!'
+};
+♦...♦
+</textarea>
+</pre>

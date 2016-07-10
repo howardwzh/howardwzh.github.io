@@ -1,0 +1,31 @@
+<h5 class="db">ES5</h5>
+<a class="copy-btn" href="javascript:;" clip-copy="getTextToCopy('#FiltersSpecES5')">Copy</a>
+<pre id="FiltersSpecES5" make-pre-code='js'>
+<textarea>
+describe('Filter: myFltr', function() {
+
+    var myFltr;
+
+    beforeEach(function() {
+
+        // Load the filters's module
+        module('myApp');
+                
+        // Provide any mocks needed
+        module(function($provide) {
+            // $provide.value('Name', new MockName());
+        });
+
+        // Inject in angular constructs otherwise,
+        // you would need to inject these into each test
+        inject(function($filter) {
+            myFltr = $filter('myFltr');
+        });
+    });
+
+    it('should exist', function() {
+        expect(!!myFltr).toBe(true);
+    });
+});
+</textarea>
+</pre>

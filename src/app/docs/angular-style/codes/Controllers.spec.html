@@ -1,0 +1,71 @@
+<h5 class="br">ES6</h5>
+<a class="copy-btn" href="javascript:;" clip-copy="getTextToCopy('#ControllersSpecES6')">Copy</a>
+<pre id="ControllersSpecES6" make-pre-code='js'>
+<textarea>
+describe('Controller: myCtrl', () => {
+
+    let myCtrl, scope;
+
+    // Initialize the controller and scope
+    beforeEach(() => {
+
+        // Load the controller's module
+        module('myApp');
+
+        // Provide any mocks needed
+        module(($provide) => {
+            $provide.value('mySvc', new MockMySvc());
+        });
+
+        // Inject in angular constructs otherwise,
+        // you would need to inject these into each test
+        inject(($controller) => {
+            scope = {};
+            myCtrl = $controller('myCtrl', {
+                $scope: scope
+            });
+        });
+    });
+
+    it('should exist', () => {
+        expect(!!myCtrl).toBe(true);
+    });
+});
+</textarea>
+</pre>
+
+<h5 class="db">ES5</h5>
+<a class="copy-btn" href="javascript:;" clip-copy="getTextToCopy('#ControllersSpecES5')">Copy</a>
+<pre id="ControllersSpecES5" make-pre-code='js'>
+<textarea>
+describe('Controller: myCtrl', function() {
+
+    var myCtrl, scope;
+
+    // Initialize the controller and scope
+    beforeEach(function() {
+
+        // Load the controller's module
+        module('myApp');
+
+        // Provide any mocks needed
+        module(function($provide) {
+            $provide.value('mySvc', new MockMySvc());
+        });
+
+        // Inject in angular constructs otherwise,
+        // you would need to inject these into each test
+        inject(function($controller) {
+            scope = {};
+            myCtrl = $controller('myCtrl', {
+                $scope: scope
+            });
+        });
+    });
+
+    it('should exist', function() {
+        expect(!!myCtrl).toBe(true);
+    });
+});
+</textarea>
+</pre>

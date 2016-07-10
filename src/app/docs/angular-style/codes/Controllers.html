@@ -1,0 +1,60 @@
+<!-- ES6 -->
+<h5 class="br">ES6</h5>
+<a class="copy-btn" href="javascript:;" clip-copy="getTextToCopy('#ControllersES6')">Copy</a>
+<pre id="ControllersES6" make-pre-code='js'>
+<textarea>
+import './mySvc.service';
+
+class myCtrl {
+    constructor($scope, mySvc) {
+        'ngInject';
+
+        let vm = this;
+
+        vm.mySvc = mySvc;
+        vm.title = 'title';
+
+        // if want to watch, must inject $scope
+        $scope.$watch('vm.title', (value) => {
+            // do something
+        });
+    }
+
+    todo() {
+        ♦...♦
+    }
+}
+
+export default angular.module('myApp')
+    .controller('myCtrl', myCtrl);
+</textarea>
+</pre>
+
+<!-- ES5 -->
+<h5 class="db">ES5</h5>
+<a class="copy-btn" href="javascript:;" clip-copy="getTextToCopy('#ControllersES5')">Copy</a>
+<pre id="ControllersES5" make-pre-code='js'>
+<textarea>
+function myCtrl($scope, mySvc) {
+    var vm = this;
+
+    vm.mySvc = mySvc;
+    vm.title = 'title';
+    vm.toda = todo;
+
+    // if want to watch, must inject $scope
+    $scope.$watch('vm.title', function(value) {
+        // do something
+    });
+
+    // some functions
+    function todo() {
+        ♦...♦
+    }
+
+    function adaptData() {
+        ♦...♦
+    }
+}
+</textarea>
+</pre>

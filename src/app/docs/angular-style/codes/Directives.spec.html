@@ -1,0 +1,54 @@
+<h5 class="db">ES5</h5>
+<a class="copy-btn" href="javascript:;" clip-copy="getTextToCopy('#DirectivesSpecES5')">Copy</a>
+<pre id="DirectivesSpecES5" make-pre-code='js'>
+<textarea>
+describe('Directive: myDir', function() {
+
+    var element, scope, compile,
+        defaultData = 'this is my directive',
+        validTemplate = '<input ng-model="data"/>';
+
+    function createDirective(data, template) {
+        var elm;
+
+        // Setup scope state
+        scope.data = data || defaultData;
+
+        // Create directive
+        elm = compile(template || validTemplate)(scope);
+
+        return elm;
+    }
+
+    beforeEach(function() {
+
+        // Load the controller's module
+        module('myApp');
+                
+        // Provide any mocks needed
+        module(function($provide) {
+            // $provide.value('mySvc', new MockMySvc());
+        });
+
+        // Inject in angular constructs otherwise,
+        // you would need to inject these into each test
+        inject(function($rootScope, $compile) {
+            scope = $rootScope.$new();
+            compile = $compile;
+        });
+    });
+
+    it('should render the expected output', function() {
+        element = createDirective();
+        expect(element.text()).toBe('this is my directive');
+    });
+
+    it('should have expected isolated scope', function() {
+        var data = 'this is the data';
+        element = createDirective(data);
+        var isolated = element.isolateScope();
+        expect(isolated.data).toBe(data);
+    });
+});
+</textarea>
+</pre>

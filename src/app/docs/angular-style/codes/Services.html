@@ -1,0 +1,48 @@
+<h5 class="br">ES6</h5>
+<a class="copy-btn" href="javascript:;" clip-copy="getTextToCopy('#ServicesES6')">Copy</a>
+<pre id="ServicesES6" make-pre-code='js'>
+<textarea>
+class mySvc {
+    constructor($http) {
+        'ngInject';
+
+        this.$http = $http;
+    }
+
+    search() {
+        ♦...♦
+    }
+
+    getTitle() {
+        ♦...♦
+    }
+}
+
+export default angular.module('myApp')
+    .factory('mySvc', mySvc);
+</textarea>
+</pre>
+
+<h5 class="db">ES5</h5>
+<a class="copy-btn" href="javascript:;" clip-copy="getTextToCopy('#ServicesES5')">Copy</a>
+<pre id="ServicesES5"  make-pre-code='js'>
+<textarea>
+function mySvc($http) {
+    var factory = {
+        search: search,
+        getTitle: getTitle
+    };
+
+    return factory;
+
+    // some functions
+    function search() {
+        ♦...♦
+    }
+
+    function getTitle() {
+        ♦...♦
+    }
+}
+</textarea>
+</pre>

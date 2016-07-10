@@ -1,0 +1,6 @@
+<div ng-controller="Demo4Controller">
+    <input type="text" ng-model="formData.userNameA" error-pro-tip="globalObj" error-pro-preset="presetObj.nameA">
+    <br>
+    <input type="text" ng-model="formData.userNameB" error-pro-tip="globalObj" error-pro-preset="presetObj.nameB" error-pro-private="{params:[formData],items:formData}">
+    <p><span ng-if="globalObj.isError===undefined">No testing</span><span ng-if="globalObj.isError">Has error</span><span ng-if="globalObj.isError===false">No error</span></p>
+</div>

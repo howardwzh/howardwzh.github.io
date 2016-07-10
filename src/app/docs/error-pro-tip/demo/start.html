@@ -1,0 +1,31 @@
+<p><b>(1)</b>&nbsp;Get error-pro-tip:</p>
+<a class="copy-btn" href="javascript:;" clip-copy="getTextToCopy('.demo-js')">Copy</a>
+<pre class="demo-js" make-pre-code='js'>
+<textarea>
+$ bower install --save error-pro-tip
+</textarea>
+</pre>
+<p><b>(2)</b>&nbsp;Include error-pro-tip.js (or error-pro-tip.min.js) in your index.html.</p>
+<p><b>(3)</b>&nbsp;Add 'error-pro-tip' to your main module's list of dependencies.</p>
+<p class="tips">When you're done, your setup should look similar to the following:</p>
+<a class="copy-btn" href="javascript:;" clip-copy="getTextToCopy('.demo-html')">Copy</a>
+<pre class="demo-html" make-pre-code='html'>
+<textarea>
+<style>
+<!doctype html>
+<html ng-app="myApp">
+<head>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
+    <script src="js/error-pro-tip.min.js"></script>
+    <script>
+        var myApp = angular.module('myApp', ['ngErrorProTip']);
+    </script>
+    ♦...♦
+</head>
+<body>
+    ♦...♦
+</body>
+</html>
+</style>
+</textarea>
+</pre>

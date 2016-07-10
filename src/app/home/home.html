@@ -1,0 +1,26 @@
+<div class="jumbotron text-center">
+  <h1>Howard Wang</h1>
+  <p class="lead">
+    <img src="assets/images/portrait.png" alt="I'm Howard Wang"><br>
+    I am a senior frontend developer
+  </p>
+  <p class="animated infinite" ng-class="main.classAnimation">
+    <a href="https://github.com/howardwzh" class="btn btn-lg btn-primary">Github</a>
+  </p>
+  <p>
+    I use the technology of<acme-malarkey></acme-malarkey>
+  </p>
+  </div>
+
+  <div class="row">
+  <div class="col-sm-6 col-md-4" ng-repeat="awesomeThing in main.awesomeThings | orderBy:'rank'">
+    <div class="thumbnail">
+      <img class="pull-right" ng-src="assets/images/{{ awesomeThing.logo }}" alt="{{ awesomeThing.title }}">
+      <div class="caption">
+        <h3>{{ awesomeThing.title }}</h3>
+        <p>{{ awesomeThing.description }}</p>
+        <p><a ng-href="{{awesomeThing.url}}">{{ awesomeThing.url }}</a></p>
+      </div>
+    </div>
+  </div>
+</div>

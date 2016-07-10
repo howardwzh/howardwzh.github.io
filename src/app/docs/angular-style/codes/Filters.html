@@ -1,0 +1,35 @@
+<h5 class="db">ES5</h5>
+<a class="copy-btn" href="javascript:;" clip-copy="getTextToCopy('#FiltersES5')">Copy</a>
+<pre id="FiltersES5" make-pre-code='js'>
+<textarea>
+// single item
+function myFltr() {
+    return function(item) {
+        var result = item + 'has filted!';
+
+        return result;
+    };
+}
+
+// many items / for repeats
+function startWithA() {
+    return function(items) {
+        var result = [];
+
+        for (var i = 0, len = items.length; i < len; i++) {
+            var item = items[i];
+
+            if (item.substring(0, 1) === 'A') {
+                result.push(item);
+            }
+        }
+
+        return result;
+    };
+}
+
+export default angular.module('myApp')
+    .filter('myFltr', myFltr)
+    .filter('startWithA', startWithA);
+</textarea>
+</pre>

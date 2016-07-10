@@ -1,0 +1,108 @@
+@borderColor: #dcdcdc;
+@white: #fff;
+@mainTextColor: #323232;
+
+.left-menu {
+    ul.left-menu-list {
+        list-style: none;
+        padding-left: 0;
+        line-height: 34px;
+
+        li {
+            padding-left: 6px;
+            border-bottom: 1px solid @borderColor;
+        }
+    }
+}
+@media (min-width:960px) {
+    .left-menu {
+        position: fixed;
+        top: 50px;
+        left: 0;
+        bottom: 0;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        padding-top: 16px;
+
+        ul.left-menu-list {
+            line-height: 30px;
+
+            li {
+                border-bottom: none;
+            }
+        }
+    }
+    .right-content {
+        position: fixed;
+        top: 50px;
+        right: 0;
+        bottom: 0;
+        padding-top: 16px;
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
+}
+
+/* code style */
+.right-content {
+    h3 {
+        margin: 20px 0 0;
+        padding: 10px 0;
+        border-top: 2px solid #ccc;
+
+        &.first-title {
+            margin-top: 0;
+            border-top: none;
+        }
+    }
+    h5 {
+        font-weight: bold;
+    }
+    p.tips {
+        color: #555;
+    }
+}
+.highlight {
+    pre {
+        padding: 16px;
+        margin-bottom: 10px;
+        background-color: #333;
+        color: #F8F8F2;
+        border: none;
+        border-radius: 4px;
+    }
+}
+.copy-btn {
+    float: right;
+    margin-bottom: -22px;
+    padding: 0 10px;
+    background-color: #fff;
+    border-radius: 0 3px 0 3px;
+    border: 1px solid #333;
+    color: #999;
+    font-size: 12px;
+    outline: none;
+    text-decoration: none;
+
+    &:hover, &:focus {
+        color: #999;
+        outline: none;
+        text-decoration: none;
+    }
+    &.zeroclipboard-is-hover, &.zeroclipboard-is-active {
+        background-color: #999;
+        color: #fff;
+    }
+}
+.black-btn {
+    padding: 3px 5px;
+    border-radius: 3px;
+    background-color: #555;
+    color: #fff;
+
+    &:hover {
+        background-color: #333;
+        color: #fff;
+        text-decoration: none;
+    }
+}

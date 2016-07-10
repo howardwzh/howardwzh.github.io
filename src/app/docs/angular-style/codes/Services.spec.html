@@ -1,0 +1,62 @@
+<h5 class="db">ES5</h5>
+<a class="copy-btn" href="javascript:;" clip-copy="getTextToCopy('#ServicesSpecES5')">Copy</a>
+<pre id="ServicesSpecES5" make-pre-code='js'>
+<textarea>
+describe('Service: mySvc', function() {
+
+    var mySvc, httpBackend, mockData;
+    
+    // Use to provide any mocks needed
+    function _provide(callback) {
+        module(function($provide) {
+            callback($provide);
+        });
+    }
+    
+    // Use to inject the code under test
+    function _inject() {
+        inject(function(_mySvc_, $httpBackend, _mockData_) {
+            mySvc = _mySvc_;
+            httpBackend = $httpBackend;
+            mockData = _mockData_;
+        });
+    }
+
+    // Call this before each test, except where you are testing for errors
+    function _setup() {
+        // Mock any expected data
+        _provide(function(provide) {
+            provide.value('myVal', {});
+        });
+
+        // Inject the code under test
+        _inject();
+    }
+
+    beforeEach(function() {
+        // Load the service's module
+        module('myApp', 'myApp.mockData');
+    });
+
+    // make sure no expectations were missed in your tests.
+    // (e.g. expectGET or expectPOST)
+    afterEach(function() {
+        httpBackend.verifyNoOutstandingExpectation();
+        httpBackend.verifyNoOutstandingRequest();
+    });
+
+    describe('the service api', function() {
+        beforeEach(function() {
+            // Inject with expected values
+            _setup();
+        });
+
+        it('should exist', function() {
+            expect(!!mySvc).toBe(true);
+        });
+
+        // Add specs
+    });
+});
+</textarea>
+</pre>
