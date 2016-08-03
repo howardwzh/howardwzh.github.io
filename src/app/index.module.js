@@ -8,7 +8,7 @@ import { HomeController } from './home/home.controller';
 import { AboutController } from './about/about.controller';
 import { ContactController } from './contact/contact.controller';
 import { DocsController } from './docs/docs.controller';
-import { EptController } from './docs/error-pro-tip/ept.controller';
+import { NgrtController } from './docs/ng-rule-tip/ngrt.controller';
 import { GithubContributorService } from './components/githubContributor/githubContributor.service';
 import { WebDevTecService } from './components/webDevTec/webDevTec.service';
 import { GlobalSetService } from './components/global-set/global-set.service';
@@ -18,18 +18,18 @@ import { MalarkeyDirective } from './components/malarkey/malarkey.directive';
 import { showCode } from './components/showCode/showCode.directive';
 import { makePreCode } from './components/makePreCode/makePreCode.directive';
 
-import { Demo0Controller } from './docs/error-pro-tip/demo/demo-0/index';
-import { Demo1Controller } from './docs/error-pro-tip/demo/demo-1/index';
-import { Demo2Controller } from './docs/error-pro-tip/demo/demo-2/index';
-import { Demo3Controller } from './docs/error-pro-tip/demo/demo-3/index';
-import { Demo4Controller } from './docs/error-pro-tip/demo/demo-4/index';
-import { Demo5Controller } from './docs/error-pro-tip/demo/demo-5/index';
-import { Demo6Controller } from './docs/error-pro-tip/demo/demo-6/index';
-import { Demo7Controller } from './docs/error-pro-tip/demo/demo-7/index';
-import { Demo8Controller } from './docs/error-pro-tip/demo/demo-8/index';
-import { Demo9Controller } from './docs/error-pro-tip/demo/demo-9/index';
+import { Demo0Controller } from './docs/ng-rule-tip/demo/demo-0/index';
+import { Demo1Controller } from './docs/ng-rule-tip/demo/demo-1/index';
+import { Demo2Controller } from './docs/ng-rule-tip/demo/demo-2/index';
+import { Demo3Controller } from './docs/ng-rule-tip/demo/demo-3/index';
+import { Demo4Controller } from './docs/ng-rule-tip/demo/demo-4/index';
+import { Demo5Controller } from './docs/ng-rule-tip/demo/demo-5/index';
+import { Demo6Controller } from './docs/ng-rule-tip/demo/demo-6/index';
+import { Demo7Controller } from './docs/ng-rule-tip/demo/demo-7/index';
+import { Demo8Controller } from './docs/ng-rule-tip/demo/demo-8/index';
+import { Demo9Controller } from './docs/ng-rule-tip/demo/demo-9/index';
 
-angular.module('website', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngMessages', 'ngAria', 'ngResource', 'ui.router', 'ui.bootstrap', 'toastr', 'ngClipboard', 'ngErrorProTip'])
+angular.module('website', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngMessages', 'ngAria', 'ngResource', 'ui.router', 'ui.bootstrap', 'toastr', 'ngClipboard', 'ngRuleTip'])
   .constant('malarkey', malarkey)
   .constant('moment', moment)
   .config(config)
@@ -43,7 +43,7 @@ angular.module('website', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'n
   .controller('AboutController', AboutController)
   .controller('ContactController', ContactController)
   .controller('DocsController', DocsController)
-  .controller('EptController', EptController)
+  .controller('NgrtController', NgrtController)
   .directive('acmeNavbar', NavbarDirective)
   .directive('acmeDocsNavbar', DocsNavbarDirective)
   .directive('acmeMalarkey', MalarkeyDirective)

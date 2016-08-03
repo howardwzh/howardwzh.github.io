@@ -37,12 +37,12 @@ export function routerConfig($stateProvider, $urlRouterProvider) {
 			controller: 'DocsController',
 			controllerAs: 'docs'
 		})
-		.state('docs.ept', {
-			url: 'ept',
-			templateUrl: 'app/docs/error-pro-tip/ept.html',
-			controller: 'EptController',
-			controllerAs: 'ept',
-			title:'ept'
+		.state('docs.ngrt', {
+			url: 'ngrt',
+			templateUrl: 'app/docs/ng-rule-tip/ngrt.html',
+			controller: 'NgrtController',
+			controllerAs: 'ngrt',
+			title:'ngrt'
 		})
 		.state('docs.angular-style', {
 			url: 'angular-style',

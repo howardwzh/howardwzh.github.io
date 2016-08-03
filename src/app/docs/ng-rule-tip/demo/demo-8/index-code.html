@@ -1,0 +1,103 @@
+<h5 class="bl">Html</h5>
+<a class="copy-btn" href="javascript:;" clip-copy="getTextToCopy('.demo-html')">Copy</a>
+<pre class="demo-html" make-pre-code='html'>
+<textarea>
+<style>
+♦...♦
+<select name="type" 
+  ng-model="formData.userNameTypeA.userNameType" 
+  ng-options="type for type in userNameTypeList"
+>
+</select>
+
+<input type="text" 
+  ng-model="formData.userNameA" 
+  rule-tip="globalObj" 
+  rule-tip-preset="presetObj.name"
+  rule-tip-private="{items:formData.userNameTypeA}"
+  rule-tip-only="nameOnlyObj"
+  rule-tip-index="0"
+>
+
+<br>
+
+<select name="type" 
+  ng-model="formData.userNameTypeB.userNameType" 
+  ng-options="type for type in userNameTypeList"
+>
+</select>
+
+<input type="text" 
+  ng-model="formData.userNameB" 
+  rule-tip="globalObj" 
+  rule-tip-preset="presetObj.name"
+  rule-tip-private="{items:formData.userNameTypeB}"
+  rule-tip-only="nameOnlyObj"
+  rule-tip-index="1"
+>
+
+<br>
+
+<select name="type" 
+  ng-model="formData.userNameTypeC.userNameType" 
+  ng-options="type for type in userNameTypeList"
+>
+</select>
+
+<input type="text" 
+  ng-model="formData.userNameC" 
+  rule-tip="globalObj" 
+  rule-tip-preset="presetObj.name"
+  rule-tip-private="{items:formData.userNameTypeC}"
+  rule-tip-only="nameOnlyObj"
+  rule-tip-index="2"
+>
+♦...♦
+</style>
+</textarea>
+</pre>
+
+<h5 class="gy">Javascript</h5>
+<a class="copy-btn" href="javascript:;" clip-copy="getTextToCopy('.demo-js')">Copy</a>
+<pre class="demo-js" make-pre-code='js'>
+<textarea>
+♦...♦
+$scope.formData = {
+	userNameA: '',
+	userNameB: '',
+	userNameC: '',
+	userNameTypeA: {
+		userNameType: 'Dog'
+	},
+	userNameTypeB: {
+		userNameType: 'Dog'
+	},
+	userNameTypeC: {
+		userNameType: 'Dog'
+	},
+};
+$scope.userNameTypeList = ['Dog', 'Cat'];
+$scope.presetObj = {
+	name: {
+		id: 'name',
+		items: {
+			diffKey: 'userNameType'
+		},
+		diff: [/Dog/, /Cat/],
+		ruleTip: [{
+			rule: [/^.{1,}$/, /^[a-zA-Z]+$/],
+			tip: ['Required!', 'Must be letters!']
+		}, {
+			rule: [/^.{1,}$/, /^[a-zA-Z]+$/],
+			tip: ['Required!', 'Must be letters!']
+		}]
+	}
+};
+$scope.nameOnlyObj = {
+	onlyArr: [],
+	onlyErr: [],
+	onlyTip: 'Repeat with the above!'
+};
+♦...♦
+</textarea>
+</pre>

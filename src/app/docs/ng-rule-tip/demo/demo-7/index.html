@@ -1,0 +1,5 @@
+<div ng-controller="Demo7Controller">
+    <select name="type" ng-model="formData.userNameType" ng-options="type for type in userNameTypeList"></select>&nbsp;
+    <input type="text" ng-model="formData.userName" rule-tip="globalObj" rule-tip-preset="presetObj.name" rule-tip-private="{items:formData}">
+    <p><span ng-if="globalObj.isError===undefined">No testing</span><span ng-if="globalObj.isError">Has error</span><span ng-if="globalObj.isError===false">No error</span></p>
+</div>

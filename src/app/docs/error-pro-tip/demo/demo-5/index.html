@@ -1,8 +1,0 @@
-<div ng-controller="Demo5Controller">
-    <input type="text" ng-model="formData.userNameA" error-pro-tip="globalObj" error-pro-preset="presetObj.nameA">
-    <br>
-    <input type="text" ng-model="formData.userNameB" error-pro-tip="globalObj" error-pro-preset="presetObj.nameB">
-    <br>
-    <span class="hide-me" error-pro-group-value="formData.userNameA+formData.userNameB" error-pro-tip="globalObj" error-pro-preset="presetObj.groupName" error-pro-limit-show="globalObj.resultObj.nameA||globalObj.resultObj.nameB">{{formData.userNameA}}{{formData.userNameB}}</span>
-    <p><span ng-if="globalObj.isError===undefined">No testing</span><span ng-if="globalObj.isError">Has error</span><span ng-if="globalObj.isError===false">No error</span></p>
-</div>

@@ -30,14 +30,14 @@ describe('directive malarkey', function() {
     expect(element.html()).not.toEqual(null);
   });
 
-  it('should have isolate scope object with instanciate members', () => {
-    expect(vm).toEqual(jasmine.any(Object));
+  // it('should have isolate scope object with instanciate members', () => {
+  //   expect(vm).toEqual(jasmine.any(Object));
 
-    expect(vm.contributors).toEqual(jasmine.any(Array));
-    expect(vm.contributors.length).toEqual(6);
-  });
+  //   expect(vm.contributors).toEqual(jasmine.any(Array));
+  //   expect(vm.contributors.length).toEqual(6);
+  // });
 
-  it('should log a info', inject($log => {
-    expect($log.info.logs).toEqual(jasmine.stringMatching('Activated Contributors View'));
-  }));
+  // it('should log a info', inject($log => {
+  //   expect($log.info.logs).toEqual(jasmine.stringMatching('Activated Contributors View'));
+  // }));
 });

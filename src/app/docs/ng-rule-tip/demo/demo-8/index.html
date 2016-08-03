@@ -1,0 +1,12 @@
+<div ng-controller="Demo8Controller">
+    <select name="type" ng-model="formData.userNameTypeA.userNameType" ng-options="type for type in userNameTypeList"></select>&nbsp;
+    <input type="text" ng-model="formData.userNameA" rule-tip="globalObj" rule-tip-preset="presetObj.name" rule-tip-only="nameOnlyObj" rule-tip-private="{items:formData.userNameTypeA}" rule-tip-index="0">
+    <br>
+    <select name="type" ng-model="formData.userNameTypeB.userNameType" ng-options="type for type in userNameTypeList"></select>&nbsp;
+    <input type="text" ng-model="formData.userNameB" rule-tip="globalObj" rule-tip-preset="presetObj.name" rule-tip-only="nameOnlyObj" rule-tip-private="{items:formData.userNameTypeB}" rule-tip-index="1">
+    <br>
+    <select name="type" ng-model="formData.userNameTypeC.userNameType" ng-options="type for type in userNameTypeList"></select>&nbsp;
+    <input type="text" ng-model="formData.userNameC" rule-tip="globalObj" rule-tip-preset="presetObj.name" rule-tip-only="nameOnlyObj" rule-tip-private="{items:formData.userNameTypeC}" rule-tip-index="2">
+    <br>
+    <p><span ng-if="globalObj.isError===undefined">No testing</span><span ng-if="globalObj.isError">Has error</span><span ng-if="globalObj.isError===false">No error</span></p>
+</div>

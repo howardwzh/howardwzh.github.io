@@ -1,0 +1,60 @@
+<h5 class="bl">Html</h5>
+<a class="copy-btn" href="javascript:;" clip-copy="getTextToCopy('.demo-html')">Copy</a>
+<pre class="demo-html" make-pre-code='html'>
+<textarea>
+<style>
+♦...♦
+input:
+<br>
+<input type="text" 
+  ng-model="formData.userNameA"
+  rule-tip="globalObj" 
+  rule-tip-preset="presetObj.name"
+  rule-tip-index="0"
+>
+
+mock-input:
+<br>
+<span type="text" 
+  ng-model="formData.userNameB"
+  rule-tip="globalObj" 
+  rule-tip-preset="presetObj.name" 
+  rule-tip-index="1" 
+  rule-tip-blur="globalObj.blurShow.userNameB"
+>
+  {{formData.userNameB}}
+</span>
+
+<br>
+<button ng-click="globalObj.blurShow.userNameB=false;formData.userNameB='123'">Mock focus and input '123'</button>
+<button ng-click="globalObj.blurShow.userNameB=false;formData.userNameB='abc'">Mock focus and input 'abc'</button>
+<button ng-click="globalObj.blurShow.userNameB=true">Mock blur</button>
+♦...♦
+</style>
+</textarea>
+</pre>
+
+<h5 class="gy">Javascript</h5>
+<a class="copy-btn" href="javascript:;" clip-copy="getTextToCopy('.demo-js')">Copy</a>
+<pre class="demo-js" make-pre-code='js'>
+<textarea>
+♦...♦
+$scope.globalObj = {
+    blurShow: {}
+};
+$scope.formData = {
+    userNameA: '',
+    userNameB: ''
+};
+$scope.presetObj = {
+    name: {
+        id: 'name',
+        ruleTip: {
+            rule: [/^.{1,}$/, /^[a-zA-Z]+$/],
+            tip: ['Required!', 'Must be letters!']
+        }
+    }
+};
+♦...♦
+</textarea>
+</pre>

@@ -1,0 +1,9 @@
+<div ng-controller="Demo6Controller">
+    <input type="text" ng-model="formData.userNameA" rule-tip="globalObj" rule-tip-preset="presetObj.name" rule-tip-only="nameOnlyObj" rule-tip-index="0">
+    <br>
+    <input type="text" ng-model="formData.userNameB" rule-tip="globalObj" rule-tip-preset="presetObj.name" rule-tip-only="nameOnlyObj" rule-tip-index="1">
+    <br>
+    <input type="text" ng-model="formData.userNameC" rule-tip="globalObj" rule-tip-preset="presetObj.name" rule-tip-only="nameOnlyObj" rule-tip-index="2">
+    <br>
+    <p><span ng-if="globalObj.isError===undefined">No testing</span><span ng-if="globalObj.isError">Has error</span><span ng-if="globalObj.isError===false">No error</span></p>
+</div>

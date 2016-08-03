@@ -1,0 +1,52 @@
+<h5 class="bl">Html</h5>
+<a class="copy-btn" href="javascript:;" clip-copy="getTextToCopy('.demo-html')">Copy</a>
+<pre class="demo-html" make-pre-code='html'>
+<textarea>
+<style>
+♦...♦
+<select name="type" 
+  ng-model="formData.userNameType" 
+  ng-options="type for type in userNameTypeList"
+ >
+</select>
+
+<input type="text" 
+  ng-model="formData.userName" 
+  rule-tip="globalObj" 
+  rule-tip-preset="presetObj.name"
+  rule-tip-private="{items:formData}"
+>
+♦...♦
+</style>
+</textarea>
+</pre>
+
+<h5 class="gy">Javascript</h5>
+<a class="copy-btn" href="javascript:;" clip-copy="getTextToCopy('.demo-js')">Copy</a>
+<pre class="demo-js" make-pre-code='js'>
+<textarea>
+♦...♦
+$scope.formData = {
+	userNameType: 'Letters',
+	userName: ''
+};
+$scope.userNameTypeList = ['Letters', 'Number'];
+$scope.presetObj = {
+	name: {
+		id: 'name',
+		items: {
+			diffKey: 'userNameType'
+		},
+		diff: [/Letters/, /Number/],
+		ruleTip: [{
+			rule: [/^.{1,}$/, /^[a-zA-Z]+$/],
+			tip: ['Required!', 'Must be letters!']
+		}, {
+			rule: [/^.{1,}$/, /^[0-9]+$/],
+			tip: ['Required!', 'Must be number!']
+		}]
+	}
+};
+♦...♦
+</textarea>
+</pre>

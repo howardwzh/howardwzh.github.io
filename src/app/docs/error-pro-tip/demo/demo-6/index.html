@@ -1,9 +1,0 @@
-<div ng-controller="Demo6Controller">
-    <input type="text" ng-model="formData.userNameA" error-pro-tip="globalObj" error-pro-preset="presetObj.name" error-pro-only="nameOnlyObj" error-pro-index="0">
-    <br>
-    <input type="text" ng-model="formData.userNameB" error-pro-tip="globalObj" error-pro-preset="presetObj.name" error-pro-only="nameOnlyObj" error-pro-index="1">
-    <br>
-    <input type="text" ng-model="formData.userNameC" error-pro-tip="globalObj" error-pro-preset="presetObj.name" error-pro-only="nameOnlyObj" error-pro-index="2">
-    <br>
-    <p><span ng-if="globalObj.isError===undefined">No testing</span><span ng-if="globalObj.isError">Has error</span><span ng-if="globalObj.isError===false">No error</span></p>
-</div>
