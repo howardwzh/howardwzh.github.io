@@ -1,6 +1,7 @@
 node_modules
 .vscode
 .vite
+.DS_Store
 dist
 
 PRIVATE.md
