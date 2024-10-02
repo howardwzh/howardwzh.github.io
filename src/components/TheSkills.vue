@@ -1,13 +1,22 @@
 <script setup lang="ts">
 import ThePanel from './ThePanel.vue'
 import SkillCard from './SkillCard.vue'
-import IconVue from './icons/IconVue.vue'
 import IconReact from './icons/IconReact.vue'
+import IconNext from './icons/IconNext.vue'
+import IconVue from './icons/IconVue.vue'
+import IconNuxt from './icons/IconNuxt.vue'
 import IconFlutter from './icons/IconFlutter.vue'
 import IconJest from './icons/IconJest.vue'
 import IconPython from './icons/IconPython.vue'
 
-const skills = [
+interface Skill {
+  icon: any
+  name: string
+  status?: string
+  details: { label: string; value: string; link?: string }[]
+}
+
+const skills: Skill[] = [
   {
     icon: IconReact,
     name: 'React',
@@ -15,7 +24,19 @@ const skills = [
     details: [
       { label: '熟练度', value: '4' },
       { label: '使用时间', value: '3年' },
-      { label: '个人项目', value: '项目1，项目2' }
+      { label: '', value: 'storybook', link: '/storybooks/react/' }
+      // { label: '个人项目', value: '项目1，项目2' }
+    ]
+  },
+  {
+    icon: IconNext,
+    name: 'Next.js',
+    // status: '提升中',
+    details: [
+      { label: '熟练度', value: '1' },
+      { label: '使用时间', value: '0.5年' },
+      { label: '', value: 'storybook', link: '/storybooks/next/' }
+      // { label: '个人项目', value: '项目1，项目2' }
     ]
   },
   {
@@ -25,8 +46,19 @@ const skills = [
     details: [
       { label: '熟练度', value: '4' },
       { label: '使用时间', value: '3年' },
-      { label: '个人项目', value: '项目1，项目2' },
-      { label: '沉淀', value: 'storybook' }
+      { label: '', value: 'storybook', link: '/storybooks/vue3/' }
+      // { label: '个人项目', value: '项目1，项目2' }
+    ]
+  },
+  {
+    icon: IconNuxt,
+    name: 'Nuxt.js',
+    // status: '提升中',
+    details: [
+      { label: '熟练度', value: '1' },
+      { label: '使用时间', value: '0.5年' }
+      // { label: '', value: 'storybook', link: '/storybooks/nuxt/' }
+      // { label: '个人项目', value: '项目1，项目2' }
     ]
   },
   {
@@ -35,8 +67,8 @@ const skills = [
     status: '提升中',
     details: [
       { label: '熟练度', value: '2' },
-      { label: '使用时间', value: '0.5年' },
-      { label: '个人项目', value: '项目1，项目2' }
+      { label: '使用时间', value: '0.5年' }
+      // { label: '个人项目', value: '项目1，项目2' }
     ]
   },
   {
@@ -45,8 +77,8 @@ const skills = [
     status: '提升中',
     details: [
       { label: '熟练度', value: '2' },
-      { label: '使用时间', value: '0.5年' },
-      { label: '个人项目', value: '项目1，项目2' }
+      { label: '使用时间', value: '0.5年' }
+      // { label: '个人项目', value: '项目1，项目2' }
     ]
   },
   {
@@ -55,8 +87,8 @@ const skills = [
     status: '提升中',
     details: [
       { label: '熟练度', value: '2' },
-      { label: '使用时间', value: '0.5年' },
-      { label: '个人项目', value: '项目1，项目2' }
+      { label: '使用时间', value: '0.5年' }
+      // { label: '个人项目', value: '项目1，项目2' }
     ]
   }
   // ... Add similar objects for React, Flutter, Jest, and Python
@@ -78,10 +110,15 @@ const skills = [
         >
         <ul class="list-disc pl-5">
           <li v-for="(detail, detailIndex) in skill.details" :key="detailIndex">
-            {{ detail.label }}:
+            <template v-if="detail.label">{{ detail.label }}: </template>
             <template v-if="detail.label === '熟练度'">
               <span v-for="n in parseInt(detail.value)" :key="`star-${n}`">★</span>
               <span v-for="n in 5 - parseInt(detail.value)" :key="`empty-star-${n}`">☆</span>
+            </template>
+            <template v-else-if="detail.link">
+              <a :href="detail.link" class="text-blue-500 hover:underline">
+                {{ detail.value }}
+              </a>
             </template>
             <template v-else>
               {{ detail.value }}

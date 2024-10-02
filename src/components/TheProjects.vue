@@ -2,7 +2,15 @@
 import ThePanel from './ThePanel.vue'
 import ProjectCard from './ProjectCard.vue'
 
-const projects = [
+interface Project {
+  name: string
+  link?: string
+  intro: string
+  highlight: string
+  status?: string
+}
+
+const projects: Project[] = [
   {
     name: '社群平台',
     // link: '',
