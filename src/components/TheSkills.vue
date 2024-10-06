@@ -24,7 +24,7 @@ const skills: Skill[] = [
     details: [
       { label: '熟练度', value: '4' },
       { label: '使用时间', value: '3年' },
-      { label: '', value: 'storybook', link: '/storybooks/react/' }
+      { label: '', value: 'storybook', link: '/storybook-react/' }
       // { label: '个人项目', value: '项目1，项目2' }
     ]
   },
@@ -35,7 +35,7 @@ const skills: Skill[] = [
     details: [
       { label: '熟练度', value: '1' },
       { label: '使用时间', value: '0.5年' },
-      { label: '', value: 'storybook', link: '/storybooks/next/' }
+      { label: '', value: 'storybook', link: '/storybook-next/' }
       // { label: '个人项目', value: '项目1，项目2' }
     ]
   },
@@ -46,7 +46,7 @@ const skills: Skill[] = [
     details: [
       { label: '熟练度', value: '4' },
       { label: '使用时间', value: '3年' },
-      { label: '', value: 'storybook', link: '/storybooks/vue3/' }
+      { label: '', value: 'storybook', link: '/storybook-vue3/' }
       // { label: '个人项目', value: '项目1，项目2' }
     ]
   },
@@ -57,7 +57,7 @@ const skills: Skill[] = [
     details: [
       { label: '熟练度', value: '1' },
       { label: '使用时间', value: '0.5年' }
-      // { label: '', value: 'storybook', link: '/storybooks/nuxt/' }
+      // { label: '', value: 'storybook', link: '/storybook-nuxt/' }
       // { label: '个人项目', value: '项目1，项目2' }
     ]
   },
