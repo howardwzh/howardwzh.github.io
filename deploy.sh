@@ -5,7 +5,7 @@ BUILD_COMMAND="yarn run build"  # 打包命令
 SOURCE_DIR="dist"              # 要推送的目录
 TARGET_REPO_URL="git@github.com:howardwzh/howardwzh.github.io.git" # GitHub 目标仓库地址
 TARGET_BRANCH="master"         # 推送目标分支
-COMMIT_MESSAGE="Update dist folder" # 提交信息
+COMMIT_MESSAGE_PREFIX="Deploy website - " # 提交信息前缀
 
 # 打印日志
 echo "🚀 Starting deployment script..."
@@ -23,18 +23,25 @@ if [[ ! -d "$SOURCE_DIR" ]]; then
   exit 1
 fi
 
-# 创建临时工作目录
-TEMP_DIR=$(mktemp -d)
-echo "📂 Created temporary directory: $TEMP_DIR"
+# 获取当前工作目录
+CURRENT_DIR=$(pwd)
 
-# 克隆目标仓库的目标分支
+# 创建临时目录（在当前目录下）
+TEMP_DIR="$CURRENT_DIR/deploy_temp"
+echo "📂 Created temporary directory: $TEMP_DIR"
+mkdir -p "$TEMP_DIR"
+
+# 克隆目标分支内容到临时目录
 echo "🔄 Cloning repository: $TARGET_REPO_URL (branch: $TARGET_BRANCH)"
-git clone --branch "$TARGET_BRANCH" "$TARGET_REPO_URL" "$TEMP_DIR"
+if ! git clone --branch "$TARGET_BRANCH" "$TARGET_REPO_URL" "$TEMP_DIR"; then
+  echo "❌ Failed to clone repository. Please check the repository URL and branch."
+  exit 1
+fi
 
 # 进入临时目录
 cd "$TEMP_DIR"
 
-# 复制 dist 文件夹内容到仓库目录
+# 复制 dist 文件夹内容到临时目录（追加和替换）
 echo "📋 Copying built files to the repository..."
 cp -r "../$SOURCE_DIR/"* ./
 
@@ -46,8 +53,12 @@ if git diff --quiet; then
   exit 0
 fi
 
+# 动态生成提交信息
+CURRENT_DATE=$(date "+%Y-%m-%d %H:%M:%S")
+COMMIT_MESSAGE="${COMMIT_MESSAGE_PREFIX}${CURRENT_DATE}"
+
 # 提交变更
-echo "📝 Committing changes..."
+echo "📝 Committing changes with message: '$COMMIT_MESSAGE'"
 git add .
 git commit -m "$COMMIT_MESSAGE"
 
@@ -57,9 +68,13 @@ if git push; then
   echo "✅ Deployment successful!"
 else
   echo "❌ Deployment failed. Please check your remote repository and permissions."
+  exit 1
 fi
 
 # 清理临时目录
 cd -
 rm -rf "$TEMP_DIR"
 echo "🧹 Temporary directory cleaned up."
+
+# 打印成功日志
+echo "✅ Successfully built and deployed '$SOURCE_DIR' to '$TARGET_REPO_URL' branch '$TARGET_BRANCH'."
