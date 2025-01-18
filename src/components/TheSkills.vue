@@ -6,59 +6,64 @@ import IconNext from './icons/IconNext.vue'
 import IconVue from './icons/IconVue.vue'
 import IconNuxt from './icons/IconNuxt.vue'
 import IconFlutter from './icons/IconFlutter.vue'
-import IconJest from './icons/IconJest.vue'
+import IconGo from './icons/IconGo.vue'
 import IconPython from './icons/IconPython.vue'
+import IconTypescript from './icons/IconTypescript.vue'
+import IconNestjs from './icons/IconNestjs.vue'
 
 interface Skill {
   icon: any
   name: string
   status?: string
-  details: { label: string; value: string; link?: string }[]
+  details: { label?: string; value: string; link?: string }[]
 }
 
 const skills: Skill[] = [
   {
     icon: IconReact,
     name: 'React',
-    // status: '提升中',
     details: [
       { label: '熟练度', value: '4' },
       { label: '使用时间', value: '3年' },
-      { label: '', value: 'storybook', link: '/storybook-react/' }
-      // { label: '个人项目', value: '项目1，项目2' }
-    ]
-  },
-  {
-    icon: IconNext,
-    name: 'Next.js',
-    // status: '提升中',
-    details: [
-      { label: '熟练度', value: '1' },
-      { label: '使用时间', value: '0.5年' },
-      { label: '', value: 'storybook', link: '/storybook-next/' }
+      { value: 'storybook', link: '/storybook-react/' }
       // { label: '个人项目', value: '项目1，项目2' }
     ]
   },
   {
     icon: IconVue,
     name: 'Vue',
-    // status: '提升中',
     details: [
       { label: '熟练度', value: '4' },
       { label: '使用时间', value: '3年' },
-      { label: '', value: 'storybook', link: '/storybook-vue3/' }
+      { value: 'storybook', link: '/storybook-vue3/' }
       // { label: '个人项目', value: '项目1，项目2' }
+    ]
+  },
+  {
+    icon: IconTypescript,
+    name: 'Typescript',
+    status: '提升中',
+    details: [
+      { label: '熟练度', value: '2' },
+      { label: '使用时间', value: '0.5年' }
+    ]
+  },
+  {
+    icon: IconNext,
+    name: 'Next.js',
+    status: '提升中',
+    details: [
+      { label: '熟练度', value: '1' },
+      { label: '使用时间', value: '0.1年' }
     ]
   },
   {
     icon: IconNuxt,
     name: 'Nuxt.js',
-    // status: '提升中',
+    status: '提升中',
     details: [
       { label: '熟练度', value: '1' },
-      { label: '使用时间', value: '0.5年' }
-      // { label: '', value: 'storybook', link: '/storybook-nuxt/' }
-      // { label: '个人项目', value: '项目1，项目2' }
+      { label: '使用时间', value: '0.2年' }
     ]
   },
   {
@@ -68,17 +73,24 @@ const skills: Skill[] = [
     details: [
       { label: '熟练度', value: '2' },
       { label: '使用时间', value: '0.5年' }
-      // { label: '个人项目', value: '项目1，项目2' }
     ]
   },
   {
-    icon: IconJest,
-    name: 'Jest',
+    icon: IconGo,
+    name: 'Go',
     status: '提升中',
     details: [
-      { label: '熟练度', value: '2' },
-      { label: '使用时间', value: '0.5年' }
-      // { label: '个人项目', value: '项目1，项目2' }
+      { label: '熟练度', value: '1' },
+      { label: '使用时间', value: '0.1年' }
+    ]
+  },
+  {
+    icon: IconNestjs,
+    name: 'Nestjs (Node)',
+    status: '提升中',
+    details: [
+      { label: '熟练度', value: '1' },
+      { label: '使用时间', value: '0.1年' }
     ]
   },
   {
@@ -88,10 +100,8 @@ const skills: Skill[] = [
     details: [
       { label: '熟练度', value: '2' },
       { label: '使用时间', value: '0.5年' }
-      // { label: '个人项目', value: '项目1，项目2' }
     ]
   }
-  // ... Add similar objects for React, Flutter, Jest, and Python
 ]
 </script>
 <template>

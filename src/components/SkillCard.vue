@@ -20,6 +20,12 @@
   flex-basis: 320px;
 }
 
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .details {
   flex: 1;
   margin-left: 1rem;
