@@ -23,8 +23,8 @@ const skills: Skill[] = [
     icon: IconReact,
     name: 'React',
     details: [
-      { label: '熟练度', value: '4' },
-      { label: '使用时间', value: '3年' },
+      { label: '熟练度', value: '4.5' },
+      { label: '使用时间', value: '3.5年' },
       { value: 'storybook', link: '/storybook-react/' }
       // { label: '个人项目', value: '项目1，项目2' }
     ]
@@ -33,8 +33,8 @@ const skills: Skill[] = [
     icon: IconVue,
     name: 'Vue',
     details: [
-      { label: '熟练度', value: '4' },
-      { label: '使用时间', value: '3年' },
+      { label: '熟练度', value: '4.5' },
+      { label: '使用时间', value: '5年' },
       { value: 'storybook', link: '/storybook-vue3/' }
       // { label: '个人项目', value: '项目1，项目2' }
     ]
@@ -44,8 +44,8 @@ const skills: Skill[] = [
     name: 'Typescript',
     status: '提升中',
     details: [
-      { label: '熟练度', value: '2' },
-      { label: '使用时间', value: '0.5年' }
+      { label: '熟练度', value: '3.5' },
+      { label: '使用时间', value: '1.5年' }
     ]
   },
   {
@@ -122,8 +122,17 @@ const skills: Skill[] = [
           <li v-for="(detail, detailIndex) in skill.details" :key="detailIndex">
             <template v-if="detail.label">{{ detail.label }}: </template>
             <template v-if="detail.label === '熟练度'">
-              <span v-for="n in parseInt(detail.value)" :key="`star-${n}`">★</span>
-              <span v-for="n in 5 - parseInt(detail.value)" :key="`empty-star-${n}`">☆</span>
+              <div class="inline-block items-center relative">
+                <div
+                  class="absolute overflow-hidden"
+                  :style="`width: ${Number(detail.value) * 20}%`"
+                >
+                  <span class="stars" v-for="n in 5" :key="`star-${n}`">★</span>
+                </div>
+                <div>
+                  <span class="empty-stars" v-for="n in 5" :key="`empty-star-${n}`">☆</span>
+                </div>
+              </div>
             </template>
             <template v-else-if="detail.link">
               <a :href="detail.link" class="text-blue-500 hover:underline">
@@ -140,3 +149,9 @@ const skills: Skill[] = [
     </div>
   </ThePanel>
 </template>
+<style scoped>
+.stars,
+.empty-stars {
+  color: #efb036;
+}
+</style>
