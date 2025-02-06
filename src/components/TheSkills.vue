@@ -35,7 +35,11 @@ const skills: Skill[] = [
     details: [
       { label: '熟练度', value: '4.5' },
       { label: '使用时间', value: '5年' },
-      { value: 'storybook', link: '/storybook-vue3/' }
+      { value: 'storybook', link: '/storybook-vue3/' },
+      {
+        value: '文档',
+        link: 'https://triangular-velvet-1d5.notion.site/Vue-3-19254f2dfe8980bbabaec50c6bbdacad'
+      }
       // { label: '个人项目', value: '项目1，项目2' }
     ]
   },
@@ -72,7 +76,11 @@ const skills: Skill[] = [
     status: '提升中',
     details: [
       { label: '熟练度', value: '2' },
-      { label: '使用时间', value: '0.5年' }
+      { label: '使用时间', value: '0.5年' },
+      {
+        value: '文档',
+        link: 'https://triangular-velvet-1d5.notion.site/Flutter-7b29a9c36e024b118d9ede741ac246c1'
+      }
     ]
   },
   {
