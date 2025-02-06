@@ -12,10 +12,10 @@ interface Project {
 
 const projects: Project[] = [
   {
-    name: '社群平台',
+    name: '社交平台',
     // link: '',
     intro:
-      '一个面对世界各地人们的无偏见社群平台，尽最大努力为用户提供最好的软件质量，让任何人都可以自由地表达自己的意见',
+      '一个面对世界各地人们的无偏见社交平台，尽最大努力为用户提供最好的软件质量，让任何人都可以自由地表达自己的意见',
     highlight:
       '主要使用 React + Stream + Quilljs，参与项目开发迭代，主要负责模块有发帖、评论、引用转发、私密聊天等，同时也负责了其他模块的需求开发和维护'
   },
@@ -31,7 +31,7 @@ const projects: Project[] = [
 </script>
 <template>
   <ThePanel>
-    <template #title>项目展示</template>
+    <template #title>工作经历</template>
     <div class="flex flex-wrap gap-4">
       <ProjectCard v-for="(project, index) in projects" :key="index">
         <h5 class="text-xl font-bold">
